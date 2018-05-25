@@ -23,6 +23,14 @@ Here is where the fun begins. A card will be front and center with the kanji emb
 #### Profile Page
 Here the user can see the status of their account, their favorited decks as well as their general study statistics.
 
+## Database Schema 
+#### Images of Database Schema Brainstorming
+General Overview
+![General Schema Overview](https://res.cloudinary.com/teefmummy/image/upload/v1527272981/Project%204%20wireframes/20180525_142252.jpg "General Schema Overview")
+Users
+![Users](https://res.cloudinary.com/teefmummy/image/upload/v1527272973/Project%204%20wireframes/20180525_142303.jpg "Users")
+Decks, Sets and Cards
+![Decks, Sets and Cards](https://res.cloudinary.com/teefmummy/image/upload/v1527272964/Project%204%20wireframes/20180525_142309.jpg "Decks, Sets and Cards")
 ## Tech
 #### Core Stack and highlighted packages 
 | Name | Use | Implemented? |
