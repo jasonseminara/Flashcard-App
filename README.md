@@ -26,11 +26,11 @@ Here the user can see the status of their account, their favorited decks as well
 ## Database Schema 
 #### Images of Database Schema Brainstorming
 General Overview
-<img src="https://res.cloudinary.com/teefmummy/image/upload/v1527272981/Project%204%20wireframes/20180525_142252.jpg" width="400" height="400" > <!-- .element height="50%" width="50%" -->
+<img src="https://res.cloudinary.com/teefmummy/image/upload/v1527272981/Project%204%20wireframes/20180525_142252.jpg" width="50%" height="50%" title="General Overview" > 
 Users
-<img src="https://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1527272973/Project%204%20wireframes/20180525_142303.jpg" height="50%" width="50%">
+<img src="https://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1527272973/Project%204%20wireframes/20180525_142303.jpg" height="50%" width="50%" title="Users">
 Decks, Sets and Cards
-<img src="https://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1527272964/Project%204%20wireframes/20180525_142309.jpg" height="50%" width="50%">
+<img src="https://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1527272964/Project%204%20wireframes/20180525_142309.jpg" height="50%" width="50%" title="Decks sets and cards">
 ## Tech
 #### Core Stack and highlighted packages 
 | Name | Use | Implemented? |
