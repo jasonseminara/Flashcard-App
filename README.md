@@ -26,7 +26,7 @@ Here the user can see the status of their account, their favorited decks as well
 ## Database Schema 
 #### Images of Database Schema Brainstorming
 General Overview
-![General Schema Overview](https://res.cloudinary.com/teefmummy/image/upload/v1527272981/Project%204%20wireframes/20180525_142252.jpg =100x20"General Schema Overview" )
+![General Schema Overview](https://res.cloudinary.com/teefmummy/image/upload/v1527272981/Project%204%20wireframes/20180525_142252.jpg "General Schema Overview" )
 Users
 ![Users](https://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1527272973/Project%204%20wireframes/20180525_142303.jpg "Users")
 Decks, Sets and Cards
