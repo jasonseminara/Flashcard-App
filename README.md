@@ -3,7 +3,9 @@
 A Flashcard App for studying Japanese Kanji in preparation for the JLPT.
 
 ## Wireframes
-
+Various Views - Starter Wireframe
+<br> 
+<img src="https://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1527274540/20180525_145452.jpg" height="50%" width="50%" title="Starter Wireframes">
 ## User Stories
 #### Landing Page
 User can decide to login or sign up.
