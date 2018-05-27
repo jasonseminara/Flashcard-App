@@ -1,0 +1,39 @@
+  [1m[35m (1904.4ms)[0m  [1m[35mCREATE DATABASE "Flashcard-App_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (4279.7ms)[0m  [1m[35mCREATE DATABASE "Flashcard-App_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 13:21:57 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 13:33:41 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 13:34:21 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 13:36:44 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 13:49:58 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 13:50:21 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 13:51:02 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
