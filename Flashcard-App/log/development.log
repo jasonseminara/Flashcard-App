@@ -37,3 +37,48 @@ Processing by DecksController#index as */*
 Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:02:29 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:02:55 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:03:12 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:11:46 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:11:54 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:12:16 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:12:36 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:12:40 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-27 19:12:44 -0400
+Processing by DecksController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
