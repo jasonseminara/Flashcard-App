@@ -3,7 +3,7 @@ import '../App.css';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-class LogIn extends Component {
+class Register extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -35,8 +35,8 @@ class LogIn extends Component {
     // container for login/signup components
     return (
 
-      <div className="login-page">
-        <h1>Log In </h1>
+      <div className="register-page">
+        <h1>Register </h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="username"> User Name: </label>
             <input type="text" name="username" value={this.state.username} onChange={this.handleChange}placeholder="User Name" ></input>
@@ -44,9 +44,10 @@ class LogIn extends Component {
             <input type="text" name="password" value={this.state.password} onChange={this.handleChange}placeholder="Password" ></input>
             <button value="login">Log In </button>
         </form>
+
       </div>
     );
   }
 }
 
-export default LogIn;
+export default Register;

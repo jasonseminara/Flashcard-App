@@ -1,23 +1,57 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Link, Route } from 'react-router-dom';
+import LogIn from '../components/login.jsx';
+import Register from '../components/register.jsx';
+
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class LandingPage extends Component {
-  constructor () {
-    super();
-
+  constructor (props) {
+    super(props);
+    this.state = {
+      register: false,
+      login: false,
+      enter: false
+    }
+    this.handleEntry = this.handleEntry.bind(this);
+  }
+  handleLogin(user) {
+    console.log(user);
+  }
+  handleEntry(e) {
+    e.preventDefault();
+    const {name, value} = e.target;
+    console.log(e.target);
+    this.setState(prevState => ({
+      [name]: !this.state[name],
+      enter: !this.state.enter
+    }))
   }
   render() {
     // main container for the main view on the page
     // container for login/signup components
-    return (
-      <div className="landing-page">
+    if (this.state.enter === false) {
+      return (
+        <div className="landing-page">
         <div className='landing-page-container'>
-
+          <h1>Welcome to my Flash Card App</h1>
+            <button name="register" onClick={this.handleEntry}>Register</button>
+            <button name="login" onClick={this.handleEntry}>Login</button>
         </div>
       </div>
-    );
+      );
+    } else if (this.state.enter === true) {
+      return (
+        <div className="landing-page">
+          <div className="landing-page-container">
+            {!!this.state.login && <LogIn onSubmit={this.handleLogin} />}
+            {!!this.state.register && <Register onSubmit={this.handleLogin} />}
+          </div>
+        </div>
+      );
   }
+}
 }
 
 export default LandingPage;
