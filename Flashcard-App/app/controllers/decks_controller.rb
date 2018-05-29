@@ -1,10 +1,6 @@
 class DecksController < ApplicationController
   def index
-    render json: {
-      decks: [
-        {'name': 'test'},
-        {'name': 'Yes'}
-      ]
-    }.to_json
+    @Decks = Deck.all
+    render @Decks.to_json
   end
 end

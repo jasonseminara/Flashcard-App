@@ -28,7 +28,9 @@ class DeckPage extends Component {
     if(this.state.decksLoaded) {
       return (this.state.decks.map((deck) => {
         return (
-          <Deck />
+          <Deck
+          name={deck.name}
+          key={deck.id}/>
         )
         }))
       } else {
