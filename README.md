@@ -2,7 +2,7 @@
 
 A Flashcard App for studying Japanese Kanji in preparation for the JLPT.
 ## ERDs
-<img src="https://res.cloudinary.com/teefmummy/image/upload/v1527618117/Flashcard_Site_Database_ERD.png" title="starter ERDs">
+<img src="https://res.cloudinary.com/teefmummy/image/upload/v1527618694/Flashcard_Site_Database_ERD.png" title="starter ERDs">
 ## Wireframes
 Various Views - Starter Wireframe
 <br> 
