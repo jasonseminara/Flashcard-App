@@ -2,12 +2,27 @@ import React, { Component } from 'react';
 import '../App.css';
 
 import Deck from '../partials/deck';
+import { getOneDeck } from '../services/apiservice';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class StudyPage extends Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
+    this.state = {
+      deck: [],
+      deckLoaded: false
+    }
+  }
+
+  componentDidMount() {
+    const deckId = this.props.match.params.id;
+    getOneDeck(deckId)
+    .then(data =>
+      this.setState({
+        deck: data,
+        deckLoaded: true
+      }));
   }
 
   render() {
@@ -17,6 +32,7 @@ class StudyPage extends Component {
       <div className="study-page">
         <div className='study-page-container'>
           <h1>study Page</h1>
+          <h2>{this.state.deck.name}</h2>
         </div>
       </div>
     );

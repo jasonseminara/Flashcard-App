@@ -1618,3 +1618,471 @@ FOREIGN KEY ("card_id")
   ↳ db/seeds.rb:18
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:18
+Started GET "/decks" for 127.0.0.1 at 2018-05-29 16:47:41 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by DecksController#index as */*
+  [1m[36mDeck Load (1.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/controllers/decks_controller.rb:5
+Completed 200 OK in 126ms (Views: 34.0ms | ActiveRecord: 50.4ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-29 16:47:47 -0400
+Processing by DecksController#index as */*
+  [1m[36mDeck Load (0.7ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/controllers/decks_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 16:50:08 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.7ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 56ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 16:51:10 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 9ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 16:51:11 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks" for 127.0.0.1 at 2018-05-29 17:02:59 -0400
+Processing by DecksController#index as */*
+  [1m[36mDeck Load (2.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/controllers/decks_controller.rb:5
+Completed 200 OK in 26ms (Views: 19.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/decks/:id" for 127.0.0.1 at 2018-05-29 17:07:58 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mDeck Load (0.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 79ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=:id):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:08:41 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (3.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:09:52 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 56ms (ActiveRecord: 9.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'={"controller"=>"decks", "action"=>"show", "id"=>"10"}):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:10:14 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for #<ActionController::Parameters:0x00007f8ef88c0350>):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:10:27 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `id' for #<DecksController:0x00007f8ef4d40c58>):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:10:43 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 55ms (ActiveRecord: 8.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'={"controller"=>"decks", "action"=>"show", "id"=>"10"}):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:11:08 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 200 OK in 65ms (Views: 0.9ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:12:29 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (2.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 4ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:12:35 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:12:43 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 200 OK in 20ms (Views: 5.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:12:44 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:16:45 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 11ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks" for 127.0.0.1 at 2018-05-29 17:16:52 -0400
+Processing by DecksController#index as */*
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/controllers/decks_controller.rb:5
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-29 17:16:53 -0400
+Processing by DecksController#index as */*
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/controllers/decks_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-05-29 17:17:02 -0400
+Processing by DecksController#index as */*
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/controllers/decks_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:17:05 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.7ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:21:35 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (1.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 11ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:25:17 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (1.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 10ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:25:22 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:25:37 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:25:40 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (2.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 17ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:25:54 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (8.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 11ms (ActiveRecord: 8.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:26:58 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:27:58 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:28:14 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 20ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:28:49 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:31:43 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:33:17 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 15ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:33:19 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:33:54 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:34:09 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:34:23 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:34:31 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:34:36 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/undefined" for 127.0.0.1 at 2018-05-29 17:34:56 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/decks_controller.rb:25:in `set_deck'
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:34:58 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:35:02 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/decks/10" for 127.0.0.1 at 2018-05-29 17:50:13 -0400
+Processing by DecksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDeck Load (1.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:25
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+
+

@@ -10,7 +10,13 @@ function getDecks() {
   return fetch(`${BASE_URL}/decks`)
   .then(checkStatus);
 }
+function getOneDeck(id) {
+  return fetch(`${BASE_URL}/decks/${id}`)
+  .then(checkStatus);
+}
+
 
 export {
   getDecks,
+  getOneDeck
 }

@@ -7,8 +7,8 @@ import { getDecks } from '../services/apiservice';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class DeckPage extends Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
       decks: [],
       decksLoaded: false

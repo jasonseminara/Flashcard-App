@@ -26,15 +26,16 @@ class App extends Component {
         <Route exact path ="/" render={()=> (
           <LandingPage />
         )} />
+        <Route exact path ="/decks/:id" render={(props)=> (
+          <StudyPage {...props}/>
+        )} />
         <Route exact path ="/decks" render={()=> (
           <DeckPage />
         )} />
         <Route exact path ="/profile" render={()=> (
           <ProfilePage />
         )} />
-        <Route exact path ="/study" render={()=> (
-          <StudyPage />
-        )} />
+
       </div>
     );
   }
