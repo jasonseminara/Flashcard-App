@@ -19,13 +19,14 @@ class DeckPage extends Component {
     getDecks()
     .then(data =>
       this.setState({
-        decks: data.decks,
+        decks: data,
         decksLoaded: true
       }));
   }
 
   renderDecks() {
     if(this.state.decksLoaded) {
+      console.log(this.state.decks)
       return (this.state.decks.map((deck) => {
         return (
           <Deck

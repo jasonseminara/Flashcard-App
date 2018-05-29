@@ -7,7 +7,7 @@ class Deck extends Component {
   render() {
     return (
       <div className="deck">
-        <h1>Deck</h1>
+        <h1>{this.props.name}</h1>
         <p>Lorem Ipsum</p>
         <button>Details</button>
         <button>Let's Study!</button>

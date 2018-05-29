@@ -1,5 +1,5 @@
 class Deck < ApplicationRecord
-  def allDecks
+  def deck
     decks = Deck.all
   end
 end
