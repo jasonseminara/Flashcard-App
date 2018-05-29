@@ -30,7 +30,7 @@ class DeckPage extends Component {
       return (this.state.decks.map((deck) => {
         return (
           <Deck
-          name={deck.name}
+          deck={deck}
           key={deck.id}/>
         )
         }))
