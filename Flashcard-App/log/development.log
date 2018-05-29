@@ -1528,3 +1528,93 @@ FOREIGN KEY ("card_id")
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (19.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mDeck Destroy (62.9ms)[0m  [1m[31mDELETE FROM "decks" WHERE "decks"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:8
+  [1m[35m (82.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mDeck Destroy (1.1ms)[0m  [1m[31mDELETE FROM "decks" WHERE "decks"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mDeck Destroy (1.0ms)[0m  [1m[31mDELETE FROM "decks" WHERE "decks"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:8
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (42.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUsercard Load (1.0ms)[0m  [1m[34mSELECT "usercards".* FROM "usercards"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mDeck Create (28.5ms)[0m  [1m[32mINSERT INTO "decks" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2018-05-29 20:22:37.858106"], ["updated_at", "2018-05-29 20:22:37.858106"], ["name", "Deck A"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mDeck Create (0.5ms)[0m  [1m[32mINSERT INTO "decks" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2018-05-29 20:22:37.890563"], ["updated_at", "2018-05-29 20:22:37.890563"], ["name", "Deck B"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mDeck Create (0.4ms)[0m  [1m[32mINSERT INTO "decks" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2018-05-29 20:22:37.893820"], ["updated_at", "2018-05-29 20:22:37.893820"], ["name", "Deck C"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCard Create (0.8ms)[0m  [1m[32mINSERT INTO "cards" ("q_value", "a_value", "created_at", "updated_at", "deck_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["q_value", "What is a man?"], ["a_value", "A Miserable Pile of Secrets"], ["created_at", "2018-05-29 20:22:37.904863"], ["updated_at", "2018-05-29 20:22:37.904863"], ["deck_id", 10]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("q_value", "a_value", "created_at", "updated_at", "deck_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["q_value", "To Be or not to be?"], ["a_value", "is that a question?"], ["created_at", "2018-05-29 20:22:37.907542"], ["updated_at", "2018-05-29 20:22:37.907542"], ["deck_id", 10]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "hash_password", "level", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user1"], ["hash_password", "abc123"], ["level", 1], ["title", "Garbage Man"], ["created_at", "2018-05-29 20:22:37.918635"], ["updated_at", "2018-05-29 20:22:37.918635"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "hash_password", "level", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user2"], ["hash_password", "abc123"], ["level", 1], ["title", "Garbage Man"], ["created_at", "2018-05-29 20:22:37.921112"], ["updated_at", "2018-05-29 20:22:37.921112"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mFavorite Create (0.8ms)[0m  [1m[32mINSERT INTO "favorites" ("created_at", "updated_at", "user_id", "deck_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-05-29 20:22:37.929094"], ["updated_at", "2018-05-29 20:22:37.929094"], ["user_id", 1], ["deck_id", 10]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("created_at", "updated_at", "user_id", "deck_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-05-29 20:22:37.931626"], ["updated_at", "2018-05-29 20:22:37.931626"], ["user_id", 1], ["deck_id", 11]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUsercard Create (2.0ms)[0m  [1m[32mINSERT INTO "usercards" ("score", "created_at", "updated_at", "user_id", "card_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["score", 3], ["created_at", "2018-05-29 20:22:37.940332"], ["updated_at", "2018-05-29 20:22:37.940332"], ["user_id", 1], ["card_id", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
