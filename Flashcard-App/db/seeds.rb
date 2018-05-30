@@ -18,7 +18,7 @@
 # usercards = Usercard.create([{user_id: 1, card_id: 3, score: 3}])
 
 user = User.new
-user.email = 'a@b.com'
+user.email = '1@1.com'
 user.password = '123'
 user.password_confirmation = '123'
 user.save

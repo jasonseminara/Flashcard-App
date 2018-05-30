@@ -4,6 +4,7 @@ import './App.css';
 
 import Nav from './partials/nav';
 import LogIn from './components/login';
+import Register from './components/register';
 import LandingPage from './components/landingpage';
 import DeckPage from './components/deckpage';
 import ProfilePage from './components/profilepage';
@@ -19,14 +20,25 @@ class App extends Component {
       isLoggedIn: false
     }
     this.handleLogin = this.handleLogin.bind(this);
+    this.isLoggedIn = this.isLoggedIn.bind(this);
   }
+  isLoggedIn() {
+    const res = !!(localStorage.getItem("jwt"));
+    this.setState({
+      isLoggedIn: res,
+    })
+    return res;
+  }
+
+
   login (inputs) {
     const body = {"auth": {"email": inputs.email, "password": inputs.password}}
-    const init = { method: 'POST',
-                   headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-                   mode: 'cors',
-                   body:JSON.stringify(body),
-                   }
+    const init = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      mode: 'cors',
+      body: JSON.stringify(body),
+    }
     console.log(init)
     fetch(`${BASE_URL}/api/user_token`, init)
     .then(res => res.json())
@@ -41,6 +53,10 @@ class App extends Component {
   handleLogin(inp) {
     this.login(inp)
   }
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div>
@@ -50,6 +66,9 @@ class App extends Component {
         )} />
         <Route exact path ="/login" render={()=> (
           <LogIn onSubmit={this.handleLogin} />
+        )} />
+        <Route exact path ="/register" render={()=> (
+          <Register onSubmit={this.handleLogin} />
         )} />
         <Route exact path ="/decks/:id" render={(props)=> (
           <StudyPage {...props}/>

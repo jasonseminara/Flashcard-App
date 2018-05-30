@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-
+import {Redirect} from 'react-router-dom';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class LogIn extends Component {
@@ -9,6 +9,7 @@ class LogIn extends Component {
     this.state = {
       email: '',
       password: '',
+      loggedIn: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,12 +22,11 @@ class LogIn extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
-    console.log(this.props.onSubmit);
     this.props.onSubmit(this.state);
     this.setState({
       email:'',
       password:'',
+      loggedIn: true
     })
   }
 
@@ -36,6 +36,7 @@ class LogIn extends Component {
     return (
 
       <div className="login-page">
+            {this.state.loggedIn && <Redirect to='/decks'/>};
         <h1>Log In </h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="email"> Email: </label>

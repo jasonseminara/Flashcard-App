@@ -31,27 +31,17 @@ class LandingPage extends Component {
   render() {
     // main container for the main view on the page
     // container for login/signup components
-    if (this.state.enter === false) {
+    // if (this.state.enter === false) {
       return (
         <div className="landing-page">
         <div className='landing-page-container'>
           <h1>Welcome to my Flash Card App</h1>
-            <button name="register" onClick={this.handleEntry}>Register</button>
-            <button name="login" onClick={this.handleEntry}>Login</button>
+            <button name="register" onClick={this.handleEntry}><Link to="/register">Register</Link></button>
+            <button name="login" onClick={this.handleEntry}><Link to="/login">Login</Link></button>
         </div>
       </div>
       );
-    } else if (this.state.enter === true) {
-      return (
-        <div className="landing-page">
-          <div className="landing-page-container">
-            {!!this.state.login && <LogIn onSubmit={this.handleLogin} />}
-            {!!this.state.register && <Register onSubmit={this.handleLogin} />}
-          </div>
-        </div>
-      );
-  }
-}
+    }
 }
 
 export default LandingPage;

@@ -7,16 +7,18 @@ function checkStatus(resp) {
 }
 
 function getDecks() {
-  return fetch(`${BASE_URL}/decks`)
-  .then(checkStatus);
+  return fetch(`${BASE_URL}/api/decks`)
+  .then(checkStatus)
 }
 function getOneDeck(id) {
-  return fetch(`${BASE_URL}/decks/${id}`)
+  return fetch(`${BASE_URL}/api/decks/${id}`)
   .then(checkStatus);
 }
+
 
 
 export {
   getDecks,
   getOneDeck
 }
+

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 
 import Deck from '../partials/deck';
-import { getDecks } from '../services/apiservice';
+// import { getDecks } from '../services/apiservice';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -14,14 +14,23 @@ class DeckPage extends Component {
       decksLoaded: false
     }
   }
+  getDecks() {
+    const jwt = localStorage.getItem("jwt")
+    const init = {
+      headers: {"Authorization": `Bearer ${jwt}`}
+    }
+    fetch(`${BASE_URL}/api/decks`, init)
+    .then(res => res.json())
+    .then(data => this.setState({
+      decks: data,
+      decksLoaded: true
+    }))
+    .catch(err => err)
+  }
 
   componentDidMount() {
-    getDecks()
-    .then(data =>
-      this.setState({
-        decks: data,
-        decksLoaded: true
-      }));
+    this.getDecks()
+
   }
 
   renderDecks() {

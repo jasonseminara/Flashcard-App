@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 
 import Deck from '../partials/deck';
-import { getOneDeck } from '../services/apiservice';
+// import { getOneDeck } from '../services/apiservice';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -13,16 +13,26 @@ class StudyPage extends Component {
       deck: [],
       deckLoaded: false
     }
+    this.getDeckRelatedInformation = this.getDeckRelatedInformation.bind(this);
   }
-
-  componentDidMount() {
+  getDeckRelatedInformation() {
     const deckId = this.props.match.params.id;
-    getOneDeck(deckId)
+    const jwt = localStorage.getItem("jwt")
+    const init = {
+      headers: {"Authorization": `Bearer ${jwt}`}
+    }
+    fetch(`${BASE_URL}/api/decks/${deckId}`, init)
+    .then(res => res.json())
     .then(data =>
       this.setState({
         deck: data,
         deckLoaded: true
-      }));
+      }))
+    .catch(err => err);
+  }
+
+  componentDidMount() {
+    this.getDeckRelatedInformation()
   }
 
   render() {
