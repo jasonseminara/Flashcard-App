@@ -1,5 +1,6 @@
 class DecksController < ApplicationController
-   before_action :set_deck, only: [:show]
+  before_action :authenticate_user
+  before_action :set_deck, only: [:show]
   def index
     @decks = Deck.all
     render json: @decks

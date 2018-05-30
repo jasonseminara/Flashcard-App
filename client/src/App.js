@@ -15,16 +15,41 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      decks: []
+      decks: [],
+      isLoggedIn: false
     }
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+  login (inputs) {
+    const body = {"auth": {"email": inputs.email, "password": inputs.password}}
+    const init = { method: 'POST',
+                   headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                   mode: 'cors',
+                   body:JSON.stringify(body),
+                   }
+    console.log(init)
+    fetch(`${BASE_URL}/api/user_token`, init)
+    .then(res => res.json())
+    .then(res => localStorage.setItem("jwt", res.jwt))
+    .then(() => this.setState({
+      isLoggedIn: true,
+    }))
+    .then(() => console.log(this.state))
+    .catch(err => console.log(err))
   }
 
+  handleLogin(inp) {
+    this.login(inp)
+  }
   render() {
     return (
       <div>
         <Nav />
         <Route exact path ="/" render={()=> (
           <LandingPage />
+        )} />
+        <Route exact path ="/login" render={()=> (
+          <LogIn onSubmit={this.handleLogin} />
         )} />
         <Route exact path ="/decks/:id" render={(props)=> (
           <StudyPage {...props}/>

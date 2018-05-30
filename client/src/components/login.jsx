@@ -7,7 +7,7 @@ class LogIn extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: '',
     }
     this.handleChange = this.handleChange.bind(this);
@@ -25,7 +25,7 @@ class LogIn extends Component {
     console.log(this.props.onSubmit);
     this.props.onSubmit(this.state);
     this.setState({
-      username:'',
+      email:'',
       password:'',
     })
   }
@@ -38,8 +38,8 @@ class LogIn extends Component {
       <div className="login-page">
         <h1>Log In </h1>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username"> User Name: </label>
-            <input type="text" name="username" value={this.state.username} onChange={this.handleChange}placeholder="User Name" ></input>
+          <label htmlFor="email"> Email: </label>
+            <input type="text" name="email" value={this.state.email} onChange={this.handleChange}placeholder="User Name" ></input>
           <label htmlFor="password"> Password: </label>
             <input type="text" name="password" value={this.state.password} onChange={this.handleChange}placeholder="Password" ></input>
             <button value="login">Log In </button>
