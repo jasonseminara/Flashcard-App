@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-
+import Card from '../partials/card';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class StudyPage extends Component {
@@ -8,7 +8,7 @@ class StudyPage extends Component {
     super(props);
     this.state = {
       deck: [],
-      deckLoaded: false
+      cardsLoaded: false
     }
     this.getDeckRelatedInformation = this.getDeckRelatedInformation.bind(this);
   }
@@ -23,7 +23,7 @@ class StudyPage extends Component {
     .then(data =>
       this.setState({
         deck: data,
-        deckLoaded: true
+        cardsLoaded: true
       }))
     .catch(err => err);
   }
@@ -33,6 +33,21 @@ class StudyPage extends Component {
     this.getDeckRelatedInformation()
   }
 
+  renderCards() {
+    if(this.state.cardsLoaded) {
+      console.log(this.state.deck)
+      return (this.state.deck.map((card) => {
+        return (
+          <Card
+          question={card.q_value}
+          answer={card.a_value}
+          key={card.id} />
+        )
+        }))
+      } else {
+      return (<h1>Loading</h1>)
+    }
+  }
   render() {
     // main container for the main view on the page
     // container for login/signup components
@@ -40,7 +55,10 @@ class StudyPage extends Component {
       <div className="study-page">
         <div className='study-page-container'>
           <h1>study Page</h1>
-          <h2>{this.state.deck.name}</h2>
+          <h2>{ this.state.cardsLoaded && this.state.deck[0].name }</h2>
+          <ul>
+            {this.renderCards()}
+          </ul>
         </div>
       </div>
     );
