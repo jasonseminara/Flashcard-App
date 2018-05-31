@@ -7,7 +7,8 @@ class DecksController < ApplicationController
   end
 
   def show
-    render json: @deck
+    @deck_with_cards = Deck.joins(:cards).where(cards:{deck_id: @deck}).select('*').all
+    render json: @deck_with_cards
   end
 
   def create

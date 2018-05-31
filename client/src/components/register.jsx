@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import '../App.css';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-
 class Register extends Component {
   constructor (props) {
     super(props);
@@ -18,7 +16,7 @@ class Register extends Component {
   handleChange(e) {
     const {name, value} = e.target;
     this.setState({
-      [name]:e.target.value
+      [name]: value
     });
   }
   handleSubmit(e) {
@@ -34,12 +32,9 @@ class Register extends Component {
   }
 
   render() {
-    // main container for the main view on the page
-    // container for login/signup components
     return (
-
       <div className="register-page">
-      {this.state.registered && <Redirect to='/login' />}
+        {this.state.registered && <Redirect to='/login' />}
         <h1>Register </h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="email"> Email: </label>

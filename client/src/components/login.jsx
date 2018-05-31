@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 import {Redirect} from 'react-router-dom';
-const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class LogIn extends Component {
   constructor (props) {
@@ -17,7 +16,7 @@ class LogIn extends Component {
   handleChange(e) {
     const {name, value} = e.target;
     this.setState({
-      [name]:e.target.value
+      [name]: value
     });
   }
   handleSubmit(e) {
@@ -31,12 +30,9 @@ class LogIn extends Component {
   }
 
   render() {
-    // main container for the main view on the page
-    // container for login/signup components
     return (
-
       <div className="login-page">
-            {this.state.loggedIn && <Redirect to='/decks'/>};
+        {this.state.loggedIn && <Redirect to='/decks'/>}
         <h1>Log In </h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="email"> Email: </label>

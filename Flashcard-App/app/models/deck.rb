@@ -1,5 +1,5 @@
 class Deck < ApplicationRecord
-  def deck
-    decks = Deck.all
-  end
+  has_many :cards
+  has_many :favorites
+  has_many :users, through: :favorites
 end

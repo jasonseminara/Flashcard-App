@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 
-import Deck from '../partials/deck';
-// import { getOneDeck } from '../services/apiservice';
-
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class StudyPage extends Component {
@@ -30,6 +27,7 @@ class StudyPage extends Component {
       }))
     .catch(err => err);
   }
+
 
   componentDidMount() {
     this.getDeckRelatedInformation()

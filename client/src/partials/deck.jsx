@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import '../App.css';
-const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class Deck extends Component {
 
