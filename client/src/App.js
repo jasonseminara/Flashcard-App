@@ -20,6 +20,7 @@ class App extends Component {
       isLoggedIn: false
     }
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
     this.isLoggedIn = this.isLoggedIn.bind(this);
   }
   isLoggedIn() {
@@ -53,8 +54,25 @@ class App extends Component {
   handleLogin(inp) {
     this.login(inp)
   }
-  componentDidMount() {
-
+  register(inputs) {
+    const body = {"user": {"email": inputs.email, "password": inputs.password, "password_confirmation": inputs.password}}
+    const init = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      mode: 'cors',
+      body: JSON.stringify(body),
+    }
+    console.log(init)
+    fetch(`${BASE_URL}/api/users`, init)
+    // .then(res => res.json())
+    .then(() => this.setState({
+      isLoggedIn: true,
+    }))
+    .then(() => console.log(this.state))
+    .catch(err => console.log(err))
+  }
+  handleRegister(inp) {
+    this.register(inp)
   }
 
   render() {
@@ -68,7 +86,7 @@ class App extends Component {
           <LogIn onSubmit={this.handleLogin} />
         )} />
         <Route exact path ="/register" render={()=> (
-          <Register onSubmit={this.handleLogin} />
+          <Register onSubmit={this.handleRegister} />
         )} />
         <Route exact path ="/decks/:id" render={(props)=> (
           <StudyPage {...props}/>

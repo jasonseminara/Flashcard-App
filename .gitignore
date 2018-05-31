@@ -11,8 +11,8 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 # Ignore all logfiles and tempfiles.
-Flashcard-App/log/*.log
-Flashcard-App/tmp
+/Flashcard-App/log/*.log
+/Flashcard-App/tmp/
 /public/assets
 .env
 node_modules
