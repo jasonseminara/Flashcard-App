@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import '../App.css';
 
-class Card extends Component {
+class Question extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -13,11 +13,11 @@ class Card extends Component {
   render() {
     return (
       <div>
-        <li>{this.props.question}</li>
-        <li>{this.props.answer}</li>
+        <li>{this.props.question.q_value}</li>
+        <li>{this.props.question.a_value}</li>
       </div>
     );
   }
 }
 
-export default Card;
+export default Question;

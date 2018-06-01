@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-// import Quiz from '../partials/deck';
+import Question from '../partials/question';
 import { createQuestion } from '../services/apiservice';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -18,6 +18,7 @@ class CreateCardForm extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderQuestions = this.renderQuestions.bind(this);
   }
   handleChange(e) {
     const {name, value} = e.target;
@@ -28,12 +29,29 @@ class CreateCardForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    createQuestion(this.state, this.props.quiz);
+    createQuestion(this.state, this.props.quiz)
+    .then(respBody => this.setState({
+      questions: [...this.state.questions, respBody]
+    }))
     this.setState({
       q_value:'',
       a_value:'',
       created: true
     })
+  }
+  renderQuestions() {
+    if(this.state.created) {
+      console.log(this.state.questions)
+      return (this.state.questions.map((question) => {
+        return (
+          <Question
+          question={question}
+          key={question.id}/>
+        )
+        }))
+      } else {
+      return (<h1>Loading</h1>)
+    }
   }
   render() {
     return (
@@ -48,7 +66,7 @@ class CreateCardForm extends Component {
             <button value="submit">Create it!</button>
         </form>
         <div className="questions-container">
-
+          {this.renderQuestions()}
         </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Card from '../partials/card';
+// import Card from '../partials/card';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class StudyPage extends Component {
@@ -34,19 +34,19 @@ class StudyPage extends Component {
   // }
 
   renderCards() {
-    if(this.state.cardsLoaded) {
-      console.log(this.state.quiz)
-      return (this.state.quiz.map((card) => {
-        return (
-          <Card
-          question={card.q_value}
-          answer={card.a_value}
-          key={card.id} />
-        )
-        }))
-      } else {
-      return (<h1>Loading</h1>)
-    }
+    // if(this.state.cardsLoaded) {
+    //   console.log(this.state.quiz)
+    //   return (this.state.quiz.map((card) => {
+    //     return (
+    //       <Card
+    //       question={card.q_value}
+    //       answer={card.a_value}
+    //       key={card.id} />
+    //     )
+    //     }))
+    //   } else {
+    //   return (<h1>Loading</h1>)
+    // }
   }
   render() {
     // main container for the main view on the page
