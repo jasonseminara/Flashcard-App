@@ -17,6 +17,7 @@ class App extends Component {
     super();
     this.state = {
       decks: [],
+      currentUser: '',
       isLoggedIn: false
     }
     this.handleLogin = this.handleLogin.bind(this);
@@ -43,11 +44,9 @@ class App extends Component {
     console.log(init)
     fetch(`${BASE_URL}/api/user_token`, init)
     .then(res => res.json())
-    .then(res => localStorage.setItem("jwt", res.jwt))
-    .then(() => this.setState({
-      isLoggedIn: true,
-    }))
-    .then(() => console.log(this.state))
+    .then(res => {
+      localStorage.setItem("jwt", res.jwt)
+    })
     .catch(err => console.log(err))
   }
 
@@ -64,15 +63,17 @@ class App extends Component {
     }
     console.log(init)
     fetch(`${BASE_URL}/api/users`, init)
-    // .then(res => res.json())
+    .then(res => res.json())
     .then(() => this.setState({
       isLoggedIn: true,
     }))
-    .then(() => console.log(this.state))
     .catch(err => console.log(err))
   }
   handleRegister(inp) {
     this.register(inp)
+  }
+  componentDidMount() {
+    this.isLoggedIn()
   }
 
   render() {

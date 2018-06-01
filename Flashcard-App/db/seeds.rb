@@ -17,9 +17,14 @@
 # favorites = Favorite.create([{user_id: 1, deck_id: 13}, {user_id: 1, deck_id: 13}])
 # usercards = Usercard.create([{user_id: 1, card_id: 3, score: 3}])
 
-user = User.new
-user.email = '1@1.com'
-user.password = '123'
-user.password_confirmation = '123'
-user.save
+# quiz = Quiz.new
+# quiz.name = 'quiz a'
+# quiz.description = 'a test quiz'
+# quiz.save
+
+question = Question.new
+question.q_value = 'What is a woman?'
+question.a_value = 'A miserable little Pile of lies!'
+question.quiz_id = 1
+question.save
 

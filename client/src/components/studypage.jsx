@@ -18,7 +18,7 @@ class StudyPage extends Component {
     const init = {
       headers: {"Authorization": `Bearer ${jwt}`}
     }
-    fetch(`${BASE_URL}/api/decks/${deckId}`, init)
+    fetch(`${BASE_URL}/api/quizzes/${deckId}`, init)
     .then(res => res.json())
     .then(data =>
       this.setState({
@@ -55,7 +55,7 @@ class StudyPage extends Component {
       <div className="study-page">
         <div className='study-page-container'>
           <h1>study Page</h1>
-          <h2>{ this.state.cardsLoaded && this.state.deck[0].name }</h2>
+          <h2>{ this.state.cardsLoaded && this.state.deck.name }</h2>
           <ul>
             {this.renderCards()}
           </ul>

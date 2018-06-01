@@ -8,7 +8,6 @@ class ProfilePage extends Component {
     super(props);
 
   }
-
   render() {
 
     return (

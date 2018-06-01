@@ -19,7 +19,7 @@ class DeckPage extends Component {
     const init = {
       headers: {"Authorization": `Bearer ${jwt}`}
     }
-    fetch(`${BASE_URL}/api/decks`, init)
+    fetch(`${BASE_URL}/api/quizzes`, init)
     .then(res => res.json())
     .then(data => this.setState({
       decks: data,
