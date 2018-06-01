@@ -23,9 +23,21 @@ function createQuiz(inputs) {
   }
 
 // Question CRUD
-function createQuestion(inputs) {
-
-}
+  function createQuestion(inputs, quizID){
+    const body = {"question": {"q_value": inputs.q_value, "a_value": inputs.a_value, "quiz_id": quizID}}
+    const jwt = localStorage.getItem("jwt")
+    const init = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json',
+                'Authorization': `Bearer ${jwt}`},
+      mode: 'cors',
+      body: JSON.stringify(body)
+    }
+    console.log(init)
+    return fetch(`${BASE_URL}/api/questions/`, init)
+    .then(checkStatus)
+    .catch(err => console.log(err))
+  }
 
 
 

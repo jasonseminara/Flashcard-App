@@ -12,6 +12,7 @@ class QuizCreateForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      questions: [],
       quizID: null,
       name: '',
       description: '',
@@ -43,6 +44,7 @@ class QuizCreateForm extends Component {
       <div className="quiz-page">
         <div className='quiz-page-container'>
           <h1>Let's create a Quiz!</h1>
+          { this.state.created ? <CreateCardForm quiz={this.state.quizID}/> :
           <form onSubmit={this.handleSubmit}>
           <label htmlFor="name"> Name of Quiz: </label>
             <input type="text" name="name" value={this.state.name} onChange={this.handleChange}placeholder="Quiz Name" ></input>
@@ -50,7 +52,7 @@ class QuizCreateForm extends Component {
             <input type="text" name="description" value={this.state.description} onChange={this.handleChange}placeholder="Description" ></input>
             <button value="submit">Create it!</button>
         </form>
-        {this.state.created ? <CreateCardForm quiz={this.state.quizID}/>: <div></div>}
+}
         </div>
       </div>
     );
