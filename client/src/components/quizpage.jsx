@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-import Quiz from '../partials/deck';
+import Quiz from '../partials/quiz';
 // import { getDecks } from '../services/apiservice';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -58,8 +58,8 @@ class QuizPage extends Component {
     return (
       <div className="quiz-page">
         <div className='quiz-page-container'>
-        { this.renderQuizzes() }
         <button onClick={this.handleClickForCreate}><Link to="/quiz/create">Create a Quiz!</Link></button>
+        { this.renderQuizzes() }
         </div>
       </div>
     );

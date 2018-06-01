@@ -8,7 +8,7 @@ class Quiz extends Component {
     return (
       <div className="quiz">
         <h1>{this.props.quiz.name}</h1>
-        <p>Lorem Ipsum</p>
+        <p>{this.props.quiz.description}</p>
         <button>Details</button>
         <button><Link to={"/quiz/" + this.props.quiz.id}>Let's Study!</Link></button>
       </div>

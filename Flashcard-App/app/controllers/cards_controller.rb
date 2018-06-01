@@ -8,13 +8,16 @@ class CardsController < ApplicationController
   def show
     render json: @card
   end
+  def create
+  end
+
 
 
   private
     def set_card
       @card = Card.find(params[:id])
     end
-    # def card_params
-    #   params.require(:deck_id)
-    # end
+    def card_params
+      params.require(:question).permit(:a_value, :q_value, :quiz)
+    end
 end

@@ -12,7 +12,7 @@ class QuizzesController < ApplicationController
   def create
     @quiz = Quiz.new(quiz_params)
     if @quiz.save
-      render json: @quiz, status: :created, location: @quiz
+      render json: @quiz, status: :created
     else
       render json: @quiz.errors, status: :unprocessable_entity
     end

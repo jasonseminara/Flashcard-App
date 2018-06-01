@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import CreateCardForm from './createcard';
 
 // import Quiz from '../partials/deck';
-// import { getDecks } from '../services/apiservice';
+import { createQuiz } from '../services/apiservice';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -11,8 +12,10 @@ class QuizCreateForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      quizID: null,
       name: '',
       description: '',
+      created: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,10 +28,14 @@ class QuizCreateForm extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit(this.state);
+    createQuiz(this.state)
+    .then(respBody => this.setState({
+      quizID: respBody.id
+    }))
     this.setState({
       name:'',
-      description:''
+      description:'',
+      created: true
     })
   }
   render() {
@@ -43,6 +50,7 @@ class QuizCreateForm extends Component {
             <input type="text" name="description" value={this.state.description} onChange={this.handleChange}placeholder="Description" ></input>
             <button value="submit">Create it!</button>
         </form>
+        {this.state.created ? <CreateCardForm quiz={this.state.quizID}/>: <div></div>}
         </div>
       </div>
     );
