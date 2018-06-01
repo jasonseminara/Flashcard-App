@@ -32,7 +32,7 @@ class LogIn extends Component {
   render() {
     return (
       <div className="login-page">
-        {this.state.loggedIn && <Redirect to='/decks'/>}
+        {this.state.loggedIn && <Redirect to='/quiz'/>}
         <h1>Log In </h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="email"> Email: </label>

@@ -7,36 +7,36 @@ class StudyPage extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      deck: [],
+      quiz: [],
       cardsLoaded: false
     }
-    this.getDeckRelatedInformation = this.getDeckRelatedInformation.bind(this);
+    // this.getDeckRelatedInformation = this.getDeckRelatedInformation.bind(this);
   }
-  getDeckRelatedInformation() {
-    const deckId = this.props.match.params.id;
-    const jwt = localStorage.getItem("jwt")
-    const init = {
-      headers: {"Authorization": `Bearer ${jwt}`}
-    }
-    fetch(`${BASE_URL}/api/quizzes/${deckId}`, init)
-    .then(res => res.json())
-    .then(data =>
-      this.setState({
-        deck: data,
-        cardsLoaded: true
-      }))
-    .catch(err => err);
-  }
+  // getDeckRelatedInformation() {
+  //   const deckId = this.props.match.params.id;
+  //   const jwt = localStorage.getItem("jwt")
+  //   const init = {
+  //     headers: {"Authorization": `Bearer ${jwt}`}
+  //   }
+  //   fetch(`${BASE_URL}/api/quizzes/${deckId}`, init)
+  //   .then(res => res.json())
+  //   .then(data =>
+  //     this.setState({
+  //       quiz: data,
+  //       cardsLoaded: true
+  //     }))
+  //   .catch(err => err);
+  // }
 
 
-  componentDidMount() {
-    this.getDeckRelatedInformation()
-  }
+  // componentDidMount() {
+  //   this.getDeckRelatedInformation()
+  // }
 
   renderCards() {
     if(this.state.cardsLoaded) {
-      console.log(this.state.deck)
-      return (this.state.deck.map((card) => {
+      console.log(this.state.quiz)
+      return (this.state.quiz.map((card) => {
         return (
           <Card
           question={card.q_value}
@@ -55,7 +55,7 @@ class StudyPage extends Component {
       <div className="study-page">
         <div className='study-page-container'>
           <h1>study Page</h1>
-          <h2>{ this.state.cardsLoaded && this.state.deck.name }</h2>
+          <h2>{ this.state.cardsLoaded && this.state.quiz.name }</h2>
           <ul>
             {this.renderCards()}
           </ul>

@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
-import Deck from '../partials/deck';
+import Quiz from '../partials/deck';
 // import { getDecks } from '../services/apiservice';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-class DeckPage extends Component {
+class QuizPage extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      decks: [],
-      decksLoaded: false
-    }
+      quizzes: [],
+      quizzesLoaded: false
+    };
+    this.handleClickForCreate = this.handleClickForCreate.bind(this);
   }
   getDecks() {
     const jwt = localStorage.getItem("jwt")
@@ -22,8 +24,8 @@ class DeckPage extends Component {
     fetch(`${BASE_URL}/api/quizzes`, init)
     .then(res => res.json())
     .then(data => this.setState({
-      decks: data,
-      decksLoaded: true
+      quizzes: data,
+      quizzesLoaded: true
     }))
     .catch(err => err)
   }
@@ -33,32 +35,35 @@ class DeckPage extends Component {
 
   }
 
-  renderDecks() {
-    if(this.state.decksLoaded) {
-      console.log(this.state.decks)
-      return (this.state.decks.map((deck) => {
+  renderQuizzes() {
+    if(this.state.quizzesLoaded) {
+      console.log(this.state.quizzes)
+      return (this.state.quizzes.map((quiz) => {
         return (
-          <Deck
-          deck={deck}
-          key={deck.id}/>
+          <Quiz
+          quiz={quiz}
+          key={quiz.id}/>
         )
         }))
       } else {
       return (<h1>Loading</h1>)
     }
   }
-
+  handleClickForCreate() {
+    console.log('creating')
+  }
   render() {
     // main container for the main view on the page
     // container for login/signup components
     return (
-      <div className="deck-page">
-        <div className='deck-page-container'>
-        { this.renderDecks() }
+      <div className="quiz-page">
+        <div className='quiz-page-container'>
+        { this.renderQuizzes() }
+        <button onClick={this.handleClickForCreate}><Link to="/quiz/create">Create a Quiz!</Link></button>
         </div>
       </div>
     );
   }
 }
 
-export default DeckPage;
+export default QuizPage;
