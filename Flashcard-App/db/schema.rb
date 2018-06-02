@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_233921) do
+ActiveRecord::Schema.define(version: 2018_06_01_145809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_233921) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["instance_id", "question_id"], name: "index_answers_on_instance_id_and_question_id", unique: true
     t.index ["instance_id"], name: "index_answers_on_instance_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_233921) do
   create_table "instances", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "quiz_id"
+    t.index ["quiz_id", "user_id"], name: "index_instances_on_quiz_id_and_user_id", unique: true
     t.index ["quiz_id"], name: "index_instances_on_quiz_id"
     t.index ["user_id"], name: "index_instances_on_user_id"
   end
