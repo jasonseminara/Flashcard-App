@@ -5,26 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# Deck.destroy_all
-# Card.destroy_all
-# User.destroy_all
-# Favorite.destroy_all
-# Usercard.destroy_all
 
-# decks = Deck.create([{name: 'Deck A'},{name: 'Deck B'},{name: 'Deck C'}])
-# cards = Card.create([{q_value: 'What is a man?', a_value: 'A Miserable Pile of Secrets', deck_id: 10},{q_value: 'To Be or not to be?', a_value: 'is that a question?', deck_id: 10}])
-# users = User.create([{name: 'user1', hash_password: 'abc123', level: 1, title: 'Garbage Man'},{name: 'user2', hash_password: 'abc123', level: 1, title: 'Garbage Man'}])
-# favorites = Favorite.create([{user_id: 1, deck_id: 13}, {user_id: 1, deck_id: 13}])
-# usercards = Usercard.create([{user_id: 1, card_id: 3, score: 3}])
+require 'faker'
+require 'bcrypt'
 
-# quiz = Quiz.new
-# quiz.name = 'quiz a'
-# quiz.description = 'a test quiz'
-# quiz.save
 
-question = Question.new
-question.q_value = 'What is a woman?'
-question.a_value = 'A miserable little Pile of lies!'
-question.quiz_id = 1
-question.save
+Quiz.destroy_all
+Question.destroy_all
+User.destroy_all
+Instance.destroy_all
+
+
+# make a bunch of quizzes
+qzs = *(1..3).map do
+  Quiz.create!(name: Faker::Cat.registry, description: Faker::VentureBros.quote)
+end
+
+# make 50 questions, rando assign to each quiz
+50.times do |q|
+ Question.create!(q_value: Faker::Lorem.sentence, quiz: qzs.sample)
+end
+
+5.times do
+  User.create!(
+    name:  Faker::Name.name_with_middle,
+    level: rand(1..10),
+    title: Faker::Name.job_titles.sample,
+    email: Faker::Internet.email,
+    password_digest: BCrypt::Password.create('password')
+  ).quizzes << qzs.sample
+end
+
+
 
